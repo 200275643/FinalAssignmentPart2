@@ -18,7 +18,7 @@ namespace FinalAssignment_Part2.Models
         public int ID { get; set; }
 
         public string ProductName { get; set; }
-
+        [DataType(DataType.Currency)]
         public decimal ProductPrice { get; set; }
 
         public int BottleSize { get; set; }
