@@ -9,7 +9,7 @@ namespace FinalAssignment_Part2.Models
 {
     public class ShoppingCart
     {
-        StoreContext storeDB = new StoreContext();
+        FoodCourtModel storeDB = new FoodCourtModel();
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
 
@@ -113,7 +113,7 @@ namespace FinalAssignment_Part2.Models
             decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
                               select (int?)cartItems.Count *
-                              cartItems.ProductModels.ProductPrice).Sum();
+                              cartItems.ProductModel.ProductPrice).Sum();
 
             return total ?? decimal.Zero;
         }
@@ -130,11 +130,11 @@ namespace FinalAssignment_Part2.Models
                 {
                     ID = item.ID,
                     OrderId = order.OrderId,
-                    UnitPrice = item.ProductModels.ProductPrice,
+                    UnitPrice = item.ProductModel.ProductPrice,
                     Quantity = item.Count
                 };
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.ProductModels.ProductPrice);
+                orderTotal += (item.Count * item.ProductModel.ProductPrice);
 
                 storeDB.OrderDetails.Add(orderDetail);
 
