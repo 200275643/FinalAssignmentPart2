@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FinalAssignment_Part2.Models.ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+@*Index.cshtml
+    Naga Rimmalapudi 200277598 Chandra Reddy 200275643
+    display products*@
+<h2>Catalogue</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Add", "Create")
+    </p>
+}
+<table class="table">
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BottleSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LongDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThumbnailURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullsizeURL)
+            </th>
+            <th></th>
+        </tr>*@
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.ProductName, "Details", new { id = item.ID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BottleSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThumbnailURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullsizeURL)
+            </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            }
+        </tr>
+    }
+</table>
