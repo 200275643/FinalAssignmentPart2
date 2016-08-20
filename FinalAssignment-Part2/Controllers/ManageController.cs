@@ -8,6 +8,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FinalAssignment_Part2.Models;
 
+//ManageController.cs
+//Naga Rimmalapudi 200277598 Chandra Reddy 200275643
+//Account Controller, resposible for Change Password, Index .
+
 namespace FinalAssignment_Part2.Controllers
 {
     [Authorize]

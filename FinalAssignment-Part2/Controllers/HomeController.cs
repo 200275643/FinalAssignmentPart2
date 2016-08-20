@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+//HomeController.cs
+//Naga Rimmalapudi 200277598 Chandra Reddy 200275643
+//Account Controller, resposible for Index, About, Contact.
+
 namespace FinalAssignment_Part2.Controllers
 {
     public class HomeController : Controller

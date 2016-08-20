@@ -10,6 +10,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FinalAssignment_Part2.Models;
 
+//AccountController.cs
+//Naga Rimmalapudi 200277598 Chandra Reddy 200275643
+//Account Controller, resposible for ConfrimEmail, ForgotPassword, ForgotPasswordConfirmation, Login, Register, ResetPassword, ResetPasswordConfirmation.
+
 namespace FinalAssignment_Part2.Controllers
 {
     [Authorize]
