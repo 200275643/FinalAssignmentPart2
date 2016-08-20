@@ -1,0 +1,14 @@
+﻿@model int
+@{
+    ViewBag.Title = "Checkout Complete";
+}
+@*Complete.cshtml
+    Naga Rimmalapudi 200277598 Chandu Reddy 200275643
+    Order Confirmation Page*@
+<h2>Checkout Complete</h2>
+<p>Thanks for your order! Your order number is: @Model</p>
+<p>
+    Return to Main
+    @Html.ActionLink("Menu",
+"Index", "Home")
+</p>
