@@ -26,12 +26,12 @@ namespace FinalAssignment_Part2.Models
             return GetCart(controller.HttpContext);
         }
 
-        public void AddToCart(ProductModels prodcut)
+        public void AddToCart(ProductModel product)
         {
             // Get the matching cart and album instances
-            var cartItem = storeDB.Carts.SingleOrDefault(
+            var cartItem = storeDB.Cart.SingleOrDefault(
                 c => c.CartId == ShoppingCartId
-                && c.ID == prodcut.ID);
+                && c.ID == product.ID);
 
             if (cartItem == null)
             {
