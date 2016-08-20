@@ -29,7 +29,7 @@ namespace FinalAssignment_Part2.Models
         public void AddToCart(ProductModel product)
         {
             // Get the matching cart and album instances
-            var cartItem = storeDB.Cart.SingleOrDefault(
+            var cartItem = storeDB.Carts.SingleOrDefault(
                 c => c.CartId == ShoppingCartId
                 && c.ID == product.ID);
 
@@ -38,7 +38,7 @@ namespace FinalAssignment_Part2.Models
                 // Create a new cart item if no cart item exists
                 cartItem = new Cart
                 {
-                    ID = prodcut.ID,
+                    ID = product.ID,
                     CartId = ShoppingCartId,
                     Count = 1,
                     DateCreated = DateTime.Now
